@@ -1,0 +1,222 @@
+[
+  {
+    "attraction_id": "HK-ATT-001",
+    "name_zh": "维多利亚港",
+    "name_en": "Victoria Harbour",
+    "lat": 22.2895,
+    "lng": 114.172,
+    "district": "油尖旺区",
+    "district_en": "Yau Tsim Mong",
+    "category": "iconic_landmark",
+    "cover_image": "https://www.travelsintranslation.com/wp-content/uploads/2021/07/foto-friday-victoria-harbour-hong-kong-scaled.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-002",
+    "name_zh": "太平山顶",
+    "name_en": "Victoria Peak",
+    "lat": 22.2758,
+    "lng": 114.1455,
+    "district": "中西区",
+    "district_en": "Central and Western",
+    "category": "iconic_landmark",
+    "cover_image": "https://www.asisbiz.com/Hong-Kong/The-Peak/images/Hong-Kong-The-Peak-Victoria-Peak-Panoramic-views-Sep-2001-04.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-003",
+    "name_zh": "香港迪士尼乐园",
+    "name_en": "Hong Kong Disneyland",
+    "lat": 22.313,
+    "lng": 114.0413,
+    "district": "荃湾区",
+    "district_en": "Tsuen Wan",
+    "category": "theme_park",
+    "cover_image": "https://media.timeout.com/images/105326136/image.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-004",
+    "name_zh": "海洋公园",
+    "name_en": "Ocean Park",
+    "lat": 22.2467,
+    "lng": 114.175,
+    "district": "南区",
+    "district_en": "Southern",
+    "category": "theme_park",
+    "cover_image": "https://cdn.pixabay.com/photo/2016/06/03/04/21/hong-kong-ocean-park-1432709_1280.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-005",
+    "name_zh": "天坛大佛",
+    "name_en": "Tian Tan Buddha",
+    "lat": 22.2541,
+    "lng": 113.9052,
+    "district": "离岛区",
+    "district_en": "Islands",
+    "category": "religious_site",
+    "cover_image": "https://thumbs.dreamstime.com/b/tian-tan-buddha-big-buddha-hong-kong-aerial-view-tian-tan-buddha-big-buddha-hong-kong-aerial-view-lush-forest-lagoon-312935386.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-006",
+    "name_zh": "黄大仙祠",
+    "name_en": "Wong Tai Sin Temple",
+    "lat": 22.3427,
+    "lng": 114.194,
+    "district": "黄大仙区",
+    "district_en": "Wong Tai Sin",
+    "category": "religious_site",
+    "cover_image": "https://thumbs.dreamstime.com/b/hong-kong-march-wong-tai-sin-temple-hong-kong-city-wong-tai-sin-temple-hong-kong-city-317426894.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-007",
+    "name_zh": "星光大道",
+    "name_en": "Avenue of Stars",
+    "lat": 22.2942,
+    "lng": 114.1742,
+    "district": "油尖旺区",
+    "district_en": "Yau Tsim Mong",
+    "category": "cultural_site",
+    "cover_image": "https://planetofhotels.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/Avenue-of-Stars-in-Hong-Kong.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-008",
+    "name_zh": "庙街夜市",
+    "name_en": "Temple Street Night Market",
+    "lat": 22.3076,
+    "lng": 114.1701,
+    "district": "油尖旺区",
+    "district_en": "Yau Tsim Mong",
+    "category": "market",
+    "cover_image": "https://www.temple-street-night-market.hk/images/slide3.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-009",
+    "name_zh": "兰桂坊",
+    "name_en": "Lan Kwai Fong",
+    "lat": 22.2809,
+    "lng": 114.1556,
+    "district": "中西区",
+    "district_en": "Central and Western",
+    "category": "entertainment",
+    "cover_image": "https://cdn.cheapoguides.com/wp-content/uploads/sites/7/2019/11/lan-kwai-fong-istock-aluxum.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-010",
+    "name_zh": "南丫岛",
+    "name_en": "Lamma Island",
+    "lat": 22.2233,
+    "lng": 114.118,
+    "district": "离岛区",
+    "district_en": "Islands",
+    "category": "island",
+    "cover_image": "http://travelingrockhopper.com/wordpress/wp-content/uploads/2018/07/25-HongKong.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-011",
+    "name_zh": "金紫荆广场",
+    "name_en": "Golden Bauhinia Square",
+    "lat": 22.284,
+    "lng": 114.1733,
+    "district": "湾仔区",
+    "district_en": "Wan Chai",
+    "category": "iconic_landmark",
+    "cover_image": "https://thumbs.dreamstime.com/z/golden-bauhinia-square-hong-kong-golden-bauhinia-square-hong-kong-257295509.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-012",
+    "name_zh": "香港故宫文化博物馆",
+    "name_en": "HK Palace Museum",
+    "lat": 22.3023,
+    "lng": 114.157,
+    "district": "油尖旺区",
+    "district_en": "Yau Tsim Mong",
+    "category": "museum",
+    "cover_image": "https://hktipster.com/wp-content/uploads/2025/01/Hong_Kong_Palace_Museum.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-013",
+    "name_zh": "M+博物馆",
+    "name_en": "M+ Museum",
+    "lat": 22.3011,
+    "lng": 114.1576,
+    "district": "油尖旺区",
+    "district_en": "Yau Tsim Mong",
+    "category": "museum",
+    "cover_image": "https://cdn.tatlerasia.com/tatlerasia/i/2021/11/01090549-0r6a3144-preview-min_cover_1800x1200.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-014",
+    "name_zh": "浅水湾",
+    "name_en": "Repulse Bay",
+    "lat": 22.236,
+    "lng": 114.1965,
+    "district": "南区",
+    "district_en": "Southern",
+    "category": "beach",
+    "cover_image": "https://hongkongliving.com/wp-content/uploads/2020/07/Repulse-Bay-1.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-015",
+    "name_zh": "赤柱",
+    "name_en": "Stanley",
+    "lat": 22.2188,
+    "lng": 114.212,
+    "district": "南区",
+    "district_en": "Southern",
+    "category": "coastal_town",
+    "cover_image": "https://www.bethreiber.com/wp-content/uploads/2015/12/DSCN1389.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-016",
+    "name_zh": "香港历史博物馆",
+    "name_en": "HK Museum of History",
+    "lat": 22.302,
+    "lng": 114.1775,
+    "district": "油尖旺区",
+    "district_en": "Yau Tsim Mong",
+    "category": "museum",
+    "cover_image": "https://www.smarttravelers.de/wp-content/uploads/2018/11/Hong-Kong-Museum-of-History1.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-017",
+    "name_zh": "香港湿地公园",
+    "name_en": "HK Wetland Park",
+    "lat": 22.4684,
+    "lng": 114.0056,
+    "district": "元朗区",
+    "district_en": "Yuen Long",
+    "category": "nature_park",
+    "cover_image": "https://wetlandpark.gov.hk/filemanager/photos/public/exhibition/Hong_Kong_Wetland_Park_Map_20230728.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-018",
+    "name_zh": "昂坪360缆车",
+    "name_en": "Ngong Ping 360",
+    "lat": 22.2909,
+    "lng": 113.9375,
+    "district": "离岛区",
+    "district_en": "Islands",
+    "category": "scenic_ride",
+    "cover_image": "https://images.rove.me/w_1920,q_85/kcftjhqmjlg1vxnporbx/hong-kong-ngong-ping-360.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-019",
+    "name_zh": "西贡",
+    "name_en": "Sai Kung",
+    "lat": 22.3813,
+    "lng": 114.272,
+    "district": "西贡区",
+    "district_en": "Sai Kung",
+    "category": "coastal_town",
+    "cover_image": "https://macaulifestyle.com/wp-content/uploads/2019/03/Saikung.jpg"
+  },
+  {
+    "attraction_id": "HK-ATT-020",
+    "name_zh": "中环至半山自动扶梯",
+    "name_en": "Central-Mid-Levels Escalator",
+    "lat": 22.2835,
+    "lng": 114.1545,
+    "district": "中西区",
+    "district_en": "Central and Western",
+    "category": "urban_experience",
+    "cover_image": "https://thumbs.dreamstime.com/b/hong-kong-mid-level-escalator-system-hong-kong-east-asia-november-central-mid-levels-escalator-hong-kong-central-mid-levels-168975984.jpg"
+  }
+]

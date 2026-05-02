@@ -1,0 +1,10 @@
+{
+  "total_restaurants": 30,
+  "successful": 30,
+  "failed": 0,
+  "total_estimated_tokens": 713135,
+  "avg_tokens_per_restaurant": 23771.2,
+  "input_tokens": 705486,
+  "output_tokens": 7649,
+  "avg_quality_score": 63.7
+}

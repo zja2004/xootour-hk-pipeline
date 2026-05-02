@@ -1,0 +1,212 @@
+[
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d27460619-Reviews-AOAO-Hong_Kong.html",
+    "input_chars": 94129,
+    "output_chars": 1001,
+    "http_requests": 1,
+    "elapsed_seconds": 1.0600521564483643
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d23826886-Reviews-Chutney_Tandoor_House-Hong_Kong.html",
+    "input_chars": 94519,
+    "output_chars": 1029,
+    "http_requests": 1,
+    "elapsed_seconds": 0.6778988838195801
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d17579883-Reviews-Shahrazad_Lebanese_Dining_Lounge_Bar-Hong_Kong.html",
+    "input_chars": 94812,
+    "output_chars": 1031,
+    "http_requests": 1,
+    "elapsed_seconds": 0.826732873916626
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d14982719-Reviews-Cruise_Restaurant_Bar-Hong_Kong.html",
+    "input_chars": 93492,
+    "output_chars": 1012,
+    "http_requests": 1,
+    "elapsed_seconds": 0.876380205154419
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d941989-Reviews-Mandarin_Grill_Bar-Hong_Kong.html",
+    "input_chars": 94355,
+    "output_chars": 1044,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9342250823974609
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d927163-Reviews-Lai_Ching_Heen_Regent_Hong_Kong-Hong_Kong.html",
+    "input_chars": 94750,
+    "output_chars": 1018,
+    "http_requests": 1,
+    "elapsed_seconds": 0.8156654834747314
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d15556190-Reviews-Pica_Pica-Hong_Kong.html",
+    "input_chars": 93730,
+    "output_chars": 984,
+    "http_requests": 1,
+    "elapsed_seconds": 1.034458875656128
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d10463607-Reviews-The_Oyster_House-Hong_Kong.html",
+    "input_chars": 94012,
+    "output_chars": 1004,
+    "http_requests": 1,
+    "elapsed_seconds": 0.621924877166748
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d2190309-Reviews-Grand_Hyatt_Steakhouse_Grand_Hyatt_Hong_Kong-Hong_Kong.html",
+    "input_chars": 94954,
+    "output_chars": 1070,
+    "http_requests": 1,
+    "elapsed_seconds": 0.992774486541748
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d25042349-Reviews-Barbar-Hong_Kong.html",
+    "input_chars": 94141,
+    "output_chars": 973,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9103069305419922
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d33028056-Reviews-Le_Petit_Chef_s_Dining_Room_grand_Hyatt_Hong_Kong-Hong_Kong.html",
+    "input_chars": 93889,
+    "output_chars": 1043,
+    "http_requests": 1,
+    "elapsed_seconds": 0.6257238388061523
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d21209910-Reviews-Twist_Buckle-Hong_Kong.html",
+    "input_chars": 92734,
+    "output_chars": 1021,
+    "http_requests": 1,
+    "elapsed_seconds": 1.0936369895935059
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d27490497-Reviews-BKK_Thai_Street_Food-Hong_Kong.html",
+    "input_chars": 93911,
+    "output_chars": 1002,
+    "http_requests": 1,
+    "elapsed_seconds": 1.1083369255065918
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d19273696-Reviews-8Five2_Restobar-Hong_Kong.html",
+    "input_chars": 94405,
+    "output_chars": 1045,
+    "http_requests": 1,
+    "elapsed_seconds": 0.7715888023376465
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d24996295-Reviews-Sushi_Hisayoshi-Hong_Kong.html",
+    "input_chars": 95052,
+    "output_chars": 1046,
+    "http_requests": 1,
+    "elapsed_seconds": 0.7917661666870117
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d26532632-Reviews-El_Taquero-Hong_Kong.html",
+    "input_chars": 94092,
+    "output_chars": 994,
+    "http_requests": 1,
+    "elapsed_seconds": 0.6868338584899902
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d26778313-Reviews-Wakaran-Hong_Kong.html",
+    "input_chars": 94090,
+    "output_chars": 1008,
+    "http_requests": 1,
+    "elapsed_seconds": 0.8293075561523438
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d26810870-Reviews-Carna_by_Dario_Cecchini-Hong_Kong.html",
+    "input_chars": 94989,
+    "output_chars": 1039,
+    "http_requests": 1,
+    "elapsed_seconds": 1.0597214698791504
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d25222671-Reviews-The_Steak_House_Regent_Hong_Kong-Hong_Kong.html",
+    "input_chars": 95344,
+    "output_chars": 1053,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9828107357025146
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d25224259-Reviews-Harbourside_Regent_Hong_Kong-Hong_Kong.html",
+    "input_chars": 94297,
+    "output_chars": 1037,
+    "http_requests": 1,
+    "elapsed_seconds": 0.7913672924041748
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d24005347-Reviews-The_Hunter-Hong_Kong.html",
+    "input_chars": 93889,
+    "output_chars": 1006,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9520251750946045
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d8672539-Reviews-Cafe_2_Oyster_N_Grill-Hong_Kong.html",
+    "input_chars": 94360,
+    "output_chars": 1100,
+    "http_requests": 1,
+    "elapsed_seconds": 0.703183650970459
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d23871030-Reviews-Kushiro-Hong_Kong.html",
+    "input_chars": 94679,
+    "output_chars": 1009,
+    "http_requests": 1,
+    "elapsed_seconds": 0.7398080825805664
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d26459339-Reviews-Nobu_Regent_Hong_Kong-Hong_Kong.html",
+    "input_chars": 93063,
+    "output_chars": 1032,
+    "http_requests": 1,
+    "elapsed_seconds": 0.7119250297546387
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d32823639-Reviews-Sepoy_Mess-Hong_Kong.html",
+    "input_chars": 92862,
+    "output_chars": 1034,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9443182945251465
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d25067742-Reviews-I_O_N_Kwun_Tong-Hong_Kong.html",
+    "input_chars": 94198,
+    "output_chars": 1018,
+    "http_requests": 1,
+    "elapsed_seconds": 0.5894439220428467
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d23243897-Reviews-Teppanyaki_Mihara_Goten-Hong_Kong.html",
+    "input_chars": 94650,
+    "output_chars": 1027,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9517593383789062
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d27970670-Reviews-Avoca-Hong_Kong.html",
+    "input_chars": 91826,
+    "output_chars": 895,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9498007297515869
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d27706925-Reviews-Sukiyaki_Nakagawa-Hong_Kong.html",
+    "input_chars": 94302,
+    "output_chars": 1001,
+    "http_requests": 1,
+    "elapsed_seconds": 0.6616828441619873
+  },
+  {
+    "url": "https://www.tripadvisor.cn/Restaurant_Review-g294217-d32980878-Reviews-Ruen_Thai_Vietnamese-Hong_Kong.html",
+    "input_chars": 92461,
+    "output_chars": 1062,
+    "http_requests": 1,
+    "elapsed_seconds": 0.9504988193511963
+  }
+]
