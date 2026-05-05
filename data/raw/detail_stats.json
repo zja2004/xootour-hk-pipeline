@@ -1,0 +1,14 @@
+{
+  "total": 10000,
+  "success": 9951,
+  "failed": 49,
+  "with_address": 9951,
+  "with_ranking": 9940,
+  "with_latlon": 7879,
+  "with_hours": 4359,
+  "with_subratings": 8532,
+  "with_meals": 5078,
+  "with_phone": 0,
+  "file_size_kb": 8529.8349609375,
+  "avg_rating": 4.209927579963836
+}

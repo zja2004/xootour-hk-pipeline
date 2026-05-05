@@ -1,142 +1,124 @@
 # XOOTOUR HK Restaurant Data Pipeline
 
-🍜 **香港餐厅数据爬取管道** — 基于 TripAdvisor 公开 API 的批量数据采集系统
+🍜 **香港餐厅数据爬取管道** — 基于 TripAdvisor 公开 API + SSR 详情页的全量数据采集系统
 
 ## 📊 数据概况
 
-| 指标 | 数值 |
-|------|------|
-| 平台 | TripAdvisor.cn (猫途鹰) |
-| 地区 | 香港 (geoId=294217) |
-| 餐厅总数 | **10,000 家** |
-| 数据来源 | 公开 REST API (api.tripadvisor.cn) |
-| 采集方式 | 并发分页请求 (334页 × 30条) |
-| 采集耗时 | ~43 秒 |
-| 数据大小 | 5.65 MB (JSON) |
+### 数据文件
+
+| 文件 | 来源 | 数量 | 大小 | 状态 |
+|------|------|------|------|------|
+| `hk_restaurants_api_list.json` | 公开 REST API | 10,000 | 5.65 MB | ✅ 完成 |
+| `hk_restaurants_detail.json` | 详情页 SSR HTML | 9,951 | 8.53 MB | ✅ 完成 |
+| **总计（合并后）** | — | **~10,000** | **~14 MB** | ✅ |
+
+### API 列表数据字段
+
+| 字段 | 完整率 | 说明 |
+|------|--------|------|
+| restaurantId | 100% | ⭐ 主键 |
+| name | 100% | 餐厅中文名 |
+| rating | 99.9% | 综合评分 0-5 |
+| reviewCount | 99.8% | 点评数量 |
+| price | 56.9% | 价格等级 ¥~¥¥¥¥ |
+| cuisines | 96.0% | 菜系标签 |
+| coverImage | 93.6% | 封面图 URL |
+| detailPageUrl | 100% | 详情页链接 |
+
+### 详情页补充字段
+
+| 字段 | 完整率 | 说明 |
+|------|--------|------|
+| address | **100%** | 📍 中英文完整地址 |
+| rankingString | **100%** | 🏆 排名如 "#1 / 13,750" |
+| subratings | **86%** | 📊 食物/氛围/服务/性价比 |
+| latitude/longitude | **79%** | 🗺️ GPS 坐标 |
+| meals | **51%** | 🍽 餐时（午餐/晚餐等） |
+| hours | **44%** | 🕐 营业时间段 |
+| features | **38%** | ✨ 特色（Wifi/停车等） |
+| awards | 1% | 🏅 旅行者之选等奖项 |
+| phone | 0% | ⚠️ 需 Google Maps/OSM 补充 |
+| website | 0% | ⚠️ 需 Google Maps/OSM 补充 |
+
+**平均评分**: ⭐ 4.21/5
 
 ## 📁 项目结构
 
 ```
 xootour-hk-pipeline/
-├── README.md                     # 本文件
-├── FEASIBILITY_REPORT.md         # 平台可行性报告
-├── TECHSTACK.md                  # 技术栈说明
+├── README.md
+├── FEASIBILITY_REPORT.md          # 平台可行性报告
+├── TECHSTACK.md                   # 技术栈说明
 ├── data/
-│   ├── raw/                      # 原始爬取数据
-│   │   ├── hk_restaurants_api_list.json  ⭐ 10,000家餐厅 API 数据
-│   │   └── ... (历史数据文件)
-│   └── processed/                # 清洗后数据
-│       └── hk_restaurants_v2.json      30家详情页爬取测试
-└── scripts/                      # 爬虫脚本
-    └── tripadvisor_scraper_v2.py # 详情页单页爬虫
+│   ├── raw/
+│   │   ├── hk_restaurants_api_list.json    ⭐ 10,000家 API 数据
+│   │   ├── hk_restaurants_detail.json      ⭐ 9,951家 详情页数据
+│   │   └── detail_stats.json               统计数据
+│   ├── processed/
+│   │   └── hk_restaurants_v2.json           30家爬取测试
+│   └── _deprecated/               # 旧 AI 假数据（保留参考）
+└── scripts/
+    ├── tripadvisor_scraper_v2.py   # 详情页单页爬虫
+    ├── batch_api_crawler.py        # API 批量并发爬虫
+    └── batch_detail_crawler.py     # 详情页批量并发爬虫
 ```
 
-## 🗂️ API 数据结构 (hk_restaurants_api_list.json)
+## 🚀 技术方案
 
-```json
-{
-  "source": "tripadvisor_api",
-  "geoId": 294217,
-  "location": "香港",
-  "total": 10000,
-  "restaurants": [
-    {
-      "restaurantId": "14982719",
-      "locationId": 294217,
-      "name": "Cruise 空中餐厅及酒吧",
-      "rating": "4.9",
-      "reviewCount": 2186,
-      "price": "¥¥ - ¥¥¥",
-      "cuisines": ["酒吧餐", "亚洲料理", "餐吧", "多国料理", "餐厅"],
-      "coverImage": "https://...",
-      "status": "正在营业",
-      "reviews": ["All you can eat Tuesday", "Very good"],
-      "awards": []
-    }
-  ]
-}
+### 阶段 1: API 列表抓取 ✅
+
+通过 TripAdvisor 公开 API 批量获取全部 10,000 家餐厅基础信息。
+
+```
+端点: POST https://api.tripadvisor.cn/restapi/soa2/21218/restaurantListForPc
+并发: 10 workers × 334 页
+耗时: ~43 秒
 ```
 
-### 字段说明
+### 阶段 2: 详情页批量爬取 ✅
 
-| 字段 | 说明 | 完整度 |
-|------|------|--------|
-| `restaurantId` | TripAdvisor 餐厅唯一 ID | 100% |
-| `name` | 餐厅名称 | 100% |
-| `rating` | 综合评分 (0-5) | 99.9% |
-| `reviewCount` | 点评数量 | 99.8% |
-| `price` | 价格等级 (¥~¥¥¥¥) | 56.9% |
-| `cuisines` | 菜系标签 | 96.0% |
-| `coverImage` | 封面图 URL | 93.6% |
-| `status` | 营业状态 | ~90% |
-| `reviews` | 点评片段 (2条) | ~80% |
-| `awards` | 奖项 (e.g. 旅行者之选) | ~15% |
+利用 Next.js SSR 特性，从 HTML `__NEXT_DATA__` 直接提取数据，无需浏览器渲染。
 
-## 🔍 API vs 详情页数据对比
-
-| 数据项 | API 数据 | 详情页 | 备注 |
-|--------|----------|--------|------|
-| 名称 | ✅ | ✅ | 一致 |
-| 评分 | ✅ | ✅ | 一致 |
-| 点评数 | ✅ | ✅ | 一致 |
-| 价格 | ✅ | ✅ | 一致 |
-| 菜系 | ✅ | ✅ | API 更全(含泛类标签) |
-| 排名 | ❌ | ✅ | e.g. #1/13,750 |
-| **地址** | ❌ | ✅ | 中英文完整地址 |
-| 营业时间 | ❌ | ✅ | 餐时(午餐/晚餐/早午餐等) |
-| 子评分 | ❌ | ✅ | 食物/氛围/服务/性价比 |
-| 电话 | ❌ | ⚠️ | 仅已认领店铺 |
-| 网站 | ❌ | ⚠️ | 仅已认领店铺 |
-| 完整评论 | ❌ (仅片段) | ✅ | 含评分分布/语言分布 |
-| 照片数 | ❌ | ✅ | 全部照片计数 |
-
-**结论**: API 数据已覆盖所有核心字段(名称/评分/价格/菜系)，详情页主要提供 **地址**、**排名**、**子评分**、**完整评论** 四个关键增量字段。
-
-## 🚀 快速开始
-
-### 1. 批量获取餐厅列表
-
-```python
-import requests, json
-
-url = "https://api.tripadvisor.cn/restapi/soa2/21218/restaurantListForPc"
-headers = {"Content-Type": "application/json", "User-Agent": "TripAdvisor/1.0"}
-
-# Token 从 TripAdvisor 首页 __NEXT_DATA__ 中获取
-payload = {
-    "filters": [],
-    "currentPage": 1,
-    "pageSize": 30,
-    "sort": "default",
-    "sourceType": "pc",
-    "strategy": "default",
-    "token": "YOUR_TOKEN_HERE"
-}
-
-resp = requests.post(url, json=payload, headers=headers)
-data = resp.json()  # 返回 30 家餐厅
+```
+方式: urllib GET 详情页 → 解析 <script id="__NEXT_DATA__">
+并发: 20 workers × 10,000 页
+耗时: ~7 分钟
+成功率: 99.5% (9,951/10,000)
 ```
 
-### 2. 爬取详情页
+### 阶段 3: OpenStreetMap 补充 (进行中)
 
-```bash
-cd scripts
-python tripadvisor_scraper_v2.py <restaurant_id>
+通过 Overpass API 匹配餐厅并提取电话、网站、营业时间。
+
+```
+端点: https://overpass-api.de/api/interpreter
+策略: 批量查询 → 本地名称模糊匹配
 ```
 
-或使用 crawl4ai:
-```bash
-uv pip install crawl4ai
-python scripts/crawl_ta_single.py
-```
+## 🔍 数据样本
+
+### Top 3 餐厅
+
+**#1** Cruise 空中餐厅及酒吧 | ⭐4.9 (2,186评) | ¥¥ - ¥¥¥
+> 📍 香港 北角村里1号 香港維港凱悅尚萃酒店西座23楼
+> 📊 食物4.9/氛围4.7/服务4.9/性价比4.6
+
+**#10** Pica Pica | ⭐4.8 (700评) | ¥¥ - ¥¥¥
+> 📍 香港 上环德辅道中323号 启德商业大厦地下G-H铺
+> 📊 食物4.8/氛围4.8/服务4.9/性价比4.6
+
+**#94** Burger Joys | ⭐4.6 (388评) | ¥¥ - ¥¥¥
+> 📍 香港 湾仔骆克道42-50号君悦居
+> 📊 食物4.5/氛围4.2/服务4.4/性价比4.2
 
 ## 📋 待办事项
 
-- [ ] 详情页地址 + 排名字段补充 (高优先级)
-- [ ] 详情页子评分补充
+- [x] API 列表全量抓取 (10,000 家)
+- [x] 详情页批量爬取 (9,951 家 → 地址/排名/子评分)
+- [ ] OpenStreetMap 电话+网站补充
+- [ ] 数据清洗与合并 (API + 详情页)
+- [ ] 标准化输出 (JSON/CSV/数据库)
 - [ ] 评论区数据提取管道
-- [ ] 多语言支持 (英文名/英文地址)
-- [ ] 数据清洗与标准化输出
 
 ## 📄 许可
 
@@ -144,5 +126,6 @@ python scripts/crawl_ta_single.py
 
 ## 🔗 相关链接
 
-- TripAdvisor 香港餐厅: https://www.tripadvisor.cn/Restaurants-g294217-Hong_Kong.html
+- TripAdvisor 香港: https://www.tripadvisor.cn/Restaurants-g294217-Hong_Kong.html
 - XOOTOUR Spec V1: https://cuplore.com/view.php?file=XOO/XOOTOUR-RESTAURANT-SPEC-V1
+- 本仓库: https://github.com/zja2004/xootour-hk-pipeline
