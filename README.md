@@ -1,56 +1,39 @@
-# XOOTOUR Hong Kong Data Pipeline
+# XOOTOUR HK Restaurant Data Pipeline
 
-香港餐厅+景点数据采集、评分、推荐管线，按 [XOOTOUR-RESTAURANT-SPEC-V2](https://cuplore.com/view.php?file=XOO/XOOTOUR-RESTAURANT-SPEC-V2) 标准。
+TripAdvisor 香港餐厅数据采集管道 — 10,000 家餐厅结构化数据。
 
-## 数据概况
+## 数据集
 
-| 类别 | 数量 | 来源 |
+| 文件 | 大小 | 说明 |
 |------|------|------|
-| 餐厅 (V2 Spec) | 30 | TripAdvisor.cn 实时爬取 |
-| 餐厅 (合并) | 95 | TA + AI 生成融合 |
-| 景点 | 20 | 手工采集 |
+| `data/raw/hk_restaurants_10k_merged.json` | 9.5MB | ★ 主要数据集：10K 餐厅 API+详情合并 |
+| `data/raw/hk_restaurants_api_raw.json` | 5.8MB | TripAdvisor API 原始响应 |
+| `data/raw/hk_restaurants_detail_raw.json` | 8.5MB | 详情页爬虫原始数据 |
+| `data/raw/hk_osm_enriched.json` | 830KB | OSM 地图数据匹配结果 |
 
-## 爬取结果 (最新)
+## 字段覆盖（10K 餐厅）
 
-```
-成功率: 100% (30/30)
-总Token: 713,135
-均店Token: 23,771
-平均质量分: 63.7/100
-```
+| 字段 | 覆盖率 | 来源 |
+|------|--------|------|
+| restaurantId, name | 100% | API |
+| rating | 99.9% | API |
+| reviewCount | 100% | API |
+| cuisines (菜系) | 96.0% | 详情页 |
+| address (地址) | 99.5% | 详情页 |
+| ranking (排名) | 100% | API |
+| hours (营业时间) | 43.6% | 详情页 |
+| subratings (分项评分) | 85.3% | 详情页 |
+| price (价格等级) | 56.9% | API |
+| features (特色) | 37.6% | 详情页 |
+
+> ⚠️ phone/website/email 当前为 0%（详情页 JS 渲染问题，待修复）
 
 ## 技术栈
 
-见 [TECHSTACK.md](TECHSTACK.md)
+- **数据源**: TripAdvisor (API + 详情页)
+- **爬虫**: Python + Playwright
+- **数据格式**: JSON
 
-## 数据源可行性
+## 更新日志
 
-见 [FEASIBILITY_REPORT.md](FEASIBILITY_REPORT.md)
-
-## 目录结构
-
-```
-repo/
-├── data/
-│   ├── raw/           # 原始数据 (merged, restaurants, attractions)
-│   └── processed/     # 处理后数据 (V2 spec, token stats, summary)
-├── scripts/           # 爬虫脚本
-│   └── tripadvisor_scraper_v2.py
-├── TECHSTACK.md       # 技术栈总结
-├── FEASIBILITY_REPORT.md  # 可行性评估
-└── README.md
-```
-
-## 快速开始
-
-```bash
-# 环境
-/root/.hermes/hermes-agent/venv/bin/python3
-uv pip install beautifulsoup4 lxml httpx
-
-# 测试单店
-cd scripts && python tripadvisor_scraper_v2.py --test
-
-# 全量爬取
-python tripadvisor_scraper_v2.py --all
-```
+- 2026-05-05: 10K 餐厅数据上传（API + 详情页合并）
